@@ -1,6 +1,5 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Captura os dados do formulário
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
@@ -11,15 +10,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html><html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Formulário</title>
     <link rel="stylesheet" href="style.css">
     <style>
         .input-group {
-            display:  flex;
+            display: flex;
             gap: 10px;
         }
         .input-group input {
@@ -27,20 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     </style>
 </head>
-<body>
-
-<div class="container">
-
+<body><div class="container">
     <div class="form box">
         <h2 class="title">Formulário</h2>
-
-        <form action="form.php" method="POST">
-            <input type="text" name="name"  placeholder="Nome Completo" required>
-            <input type="email" name="email"  placeholder="Email" required>
-            <input type="tel" name="phone" placeholder="Telefone" required>
-
-            <h3>Endereço</h3>
-
+        <form action="form.php" method="POST" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Nome Completo" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Telefone" required><h3>Endereço</h3>
             <input type="text" name="street" placeholder="Nome da Rua" required>
 
             <div class="input-group">
@@ -49,13 +40,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="text" name="zipcode" placeholder="CEP" required>
             </div>
 
+            <h3>Upload de Arquivo</h3>
+            <input type="file" name="file" required>
+
             <button type="submit">Enviar Formulário</button>
         </form>
-
-
-
     </div>
-</div>
 
-</body>
+</div></body>
 </html>
